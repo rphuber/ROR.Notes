@@ -26,7 +26,10 @@ class	Car
 	attr_accessor :model
 	attr_accessor :back_seats
 	attr_accessor :max_speed
+	attr_accessor :vin_number
+	@@list_of_cars = []
 
+	#constructor - intializes the instance
 	def initialize
 		# You never want to access the instance variable dierctly (@make) - Use self.make instead
 		self.make = "Ford"
@@ -34,7 +37,7 @@ class	Car
 		self.color = "White"
 		self.back_seats = 3
 		self.max_speed = 140
-		Car.list_all_cars.push(self)
+		Car.list_of_cars.push(self)
 	end
 
 	def display_information
@@ -45,7 +48,8 @@ class	Car
 	def self.display_all_cars
 		
 	end
-	def self.list_all_cars
+
+	def self.list_of_cars
 		@@list_of_cars
 	end
 
@@ -53,19 +57,17 @@ class	Car
 end
 
 
-some_car = Car.new
-some_car.make = "Lotus"
+# some_car = Car.new
+# some_car.make = "Lotus"
 
 
 # p some_car
 # p some_car.make
-some_car.display_information
+# some_car.display_information
 
 # @something=something is an instance variable - the @ indicates an instance variable
 # @@something=something is a class variable - the @@ indicates an instance variable
-class RandomCar
-	
-end
+
 
 # a = "hello"
 # is the same as
